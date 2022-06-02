@@ -1,4 +1,4 @@
-// Исправьте функцию sendRequest
+  // Исправьте функцию sendRequest
 // Аргументы функции:
 // - имя клиента
 // - телефон клиента
@@ -34,15 +34,20 @@
 // }
 
 function sendRequest(name, phone, address, goods, sum) {
-    let data = {goods: [], order: {}};
+    let data = {client: '', goods: [], order: {address, sum}};
+    let data.goods = {title: '', count: integer};
+    
+    let data.order.address = {street: '', house: '', entrance: '', floor: '', flat: ''}
 
     let countOfGoods = goods.length;
 
     for (let i = 0; i <= countOfGoods; i += 1) {
         data.goods.push(goods[i].title);
+        data.goods.push(goods[i].count);
     }
-
+    data.client = name + phone;
     data.order.address = address;
+    address = street + house + entrance + floor + flat;
     data.order.sum = name + phone + address + goods + sum;
 
     data.client = 'Иван';
